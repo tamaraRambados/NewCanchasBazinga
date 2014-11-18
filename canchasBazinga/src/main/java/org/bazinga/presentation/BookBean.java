@@ -14,13 +14,14 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package misCanchas.presentation;
-
-import misCanchas.application.BookService;
-import misCanchas.entities.Book;
+package org.bazinga.presentation;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+
+import org.bazinga.application.BookService;
+import org.bazinga.entities.Book;
+
 import java.util.List;
 
 @Named

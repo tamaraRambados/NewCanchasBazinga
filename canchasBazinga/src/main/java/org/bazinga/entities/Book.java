@@ -14,31 +14,39 @@
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-package misCanchas.application;
+package org.bazinga.entities;
 
-import misCanchas.entities.Book;
+import javax.persistence.*;
 
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaQuery;
-import java.util.List;
+@Entity
+public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int bookId;
+    private String bookTitle;
 
-@Stateless
-public class BookService {
-
-    @PersistenceContext(unitName = "book-pu")
-    private EntityManager entityManager;
-
-    public void addBook(Book book)
-    {
-      entityManager.persist(book);
+    public int getBookId() {
+        return bookId;
     }
 
-    public List<Book> getAllBooks()
-    {
-        CriteriaQuery<Book> cq = entityManager.getCriteriaBuilder().createQuery(Book.class);
-        cq.select(cq.from(Book.class));
-        return entityManager.createQuery(cq).getResultList();
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getBookTitle() {
+        return bookTitle;
+    }
+
+    public void setBookTitle(String bookName) {
+        this.bookTitle = bookName;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", bookTitle='" + bookTitle + '\'' +
+                '}';
     }
 }
+
