@@ -171,6 +171,7 @@
         <artifactId>tomee-maven-plugin</artifactId>
         <configuration>
           <context>ROOT</context>
+          
         </configuration>
       </plugin>
       <plugin>
