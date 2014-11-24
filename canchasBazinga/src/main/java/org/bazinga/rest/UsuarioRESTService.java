@@ -24,16 +24,37 @@ public class UsuarioRESTService implements IUsuario{
 	@GET
 	@Path("lista")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Usuario> obtenerTodosLosUsuarios(){
+	public List<Usuario> getAllUsuario(){
+		
 	 	return usuarioService.getUsuario(); 			
 	}
-	
-	//curl -X POST --data-binary "verdura:{\"nombre\":\"Lechuga\",\"description\":\"la lechuga sirve para ensaladas\",\"precioUnitario\": 20.12}" -H "Content-Type: application/json" http://localhost:8080/Verduleria/api/verduras/guardar -v
-	@POST
-	@Path("registrar")	
-	public Response guardar(Usuario usuario){
-			return usuarioService.registrar(usuario);
-	}
+
+    @Override
+    public boolean alta(Usuario usuario) {
+        return false;
+    }
+
+    @Override
+    public boolean baja(Usuario usuario) {
+        return false;
+    }
+
+    @Override
+    public boolean modificar(Usuario usuario) {
+        return false;
+    }
+
+    @Override
+    public boolean loguearse(Usuario usuario) {
+        return false;
+    }
+
+    @POST
+    @Path("registrar")
+    public Response guardar(Usuario usuario){
+       return usuarioService.registrar(usuario);
+    }
+
 
 	
 }

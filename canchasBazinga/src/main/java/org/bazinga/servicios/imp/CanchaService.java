@@ -1,10 +1,18 @@
 package org.bazinga.servicios.imp;
 
+
 import org.bazinga.entities.Cancha;
-import org.bazinga.service.ICancha;
+import org.bazinga.entities.Usuario;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+import java.net.URI;
+import java.util.List;
 
 public class CanchaService{
 
@@ -12,22 +20,18 @@ public class CanchaService{
     @PersistenceContext(unitName = "cancha-pu")
     private EntityManager entityManager;
 
-	//@Override
-	public boolean alta(Cancha cancha) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Context
+    private UriInfo uriInfo;
 
-	///@Override
-	public boolean baja(Cancha cancha) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    public List<Cancha> getAllCancha(){
+        TypedQuery<Cancha> query = entityManager.createNamedQuery(Cancha.FIND_ALL,Cancha.class);
+        return query.getResultList();
+    }
 
-	//@Override
-	public boolean modificar(Cancha cancha) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    public Response registrar(Cancha cancha){
+        entityManager.persist(cancha);
+        URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(cancha.getIdCancha())).build();
+        return Response.created(bookUri).build();
+    }
 
 }

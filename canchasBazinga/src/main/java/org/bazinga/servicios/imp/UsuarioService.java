@@ -26,17 +26,28 @@ public class UsuarioService{
 	@Context
 	private UriInfo uriInfo;
 	
-	public List<Usuario> getUsuario() {
+	
+	public List<Usuario> getUsuario() {		
 		TypedQuery<Usuario> query = entityManager.createNamedQuery(Usuario.FIND_ALL,Usuario.class);
 		return query.getResultList();	
 	}
 	
 	
 	public Response registrar(Usuario usuario){
+		entityManager.getTransaction().begin();	
 		entityManager.persist(usuario);
-	    URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getIdUsuario())).build();
+		entityManager.getTransaction().commit();
+		URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getIdUsuario())).build();
 	    return Response.created(bookUri).build();
 	}
-
+	
+	/*public void registrarEstatico(){
+		Usuario u = new Usuario("isifc.facu@gmail.com",17422,"facundo","aguirre",35038452,"lopez y planes",36243,"1");
+		entityManager.getTransaction().begin();
+		entityManager.persist(u);
+		entityManager.getTransaction().commit();
+		 //URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(u.getIdUsuario())).build();
+		// return Response.created(bookUri).build();
+	}*/
 	
 }

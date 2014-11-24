@@ -30,10 +30,24 @@
     <f:view>
         <h:form>
             <h:panelGrid columns="2">
-                <h:outputText value='Enter book title'/>
-                <h:inputText value='#{bookBean.bookTitle}'/>
-                <h:outputText value='Add'/>
-                <h:commandButton action="#{bookBean.add}" value="Add"/>
+                <h:outputText value='nombre: '/>
+                <h:inputText value='#{usuarioBean.nombre}'/>
+                <h:outputText value='apellido: '/>
+                <h:inputText value='#{usuarioBean.apellido}'/>
+                <h:outputText value='Correo: '/>
+                <h:inputText value='#{usuarioBean.correoElectronico}'/>
+                <h:outputText value='DNI: '/>
+                <h:inputText value='#{usuarioBean.dni}'/>
+                <h:outputText value='Numero Usuario: '/>
+                <h:inputText value='#{usuarioBean.nroUsuario}'/>
+                <h:outputText value='Direccion: '/>
+                <h:inputText value='#{usuarioBean.direccion}'/>
+                <h:outputText value='Telefono: '/>
+                <h:inputText value='#{usuarioBean.telefono}'/>
+                <h:outputText value='Tipo: '/>
+                <h:inputText value='#{usuarioBean.tipoUsuario}'/>
+                <h:outputText value=''/>
+                <h:commandButton action="#{usuarioBean.add}" value="Registrar"/>
             </h:panelGrid>
         </h:form>
     </f:view>

@@ -1,6 +1,6 @@
 package org.bazinga.entities;
 
-import java.io.Serializable;
+
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQuery(name = Usuario.FIND_ALL,query = "SELECT u FROM Usuario u")
 public class Usuario{
 	 public static final String FIND_ALL= "Usuario.findAll";
-	//private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int IdUsuario;
@@ -83,8 +83,8 @@ public class Usuario{
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	/*
-	public Usuario(String correoElectronico, Integer nroUsuario, String nombre,
+	
+	/*public Usuario(String correoElectronico, Integer nroUsuario, String nombre,
 			String apellido, Integer dni, String direccion, Integer telefono, String tipoUsuario) {
 		super();
 		this.correoElectronico = correoElectronico;
@@ -95,10 +95,8 @@ public class Usuario{
 		this.direccion = direccion;
 		this.telefono=telefono;
 		this.tipoUsuario=tipoUsuario;
-	}
-	
-	public Usuario(){
-		
 	}*/
+	
+	
    
 }

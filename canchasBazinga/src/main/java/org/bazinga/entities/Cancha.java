@@ -1,20 +1,26 @@
 package org.bazinga.entities;
 
-import java.io.Serializable;
+
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Entity implementation class for Entity: Cancha
  *
+
  */
+
 @Entity
+@XmlRootElement(name="canchas")
+@NamedQuery(name = Cancha.FIND_ALL,query = "SELECT c FROM Cancha c")
 public class Cancha {
 	
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private int IdCancha;
-	 
+
+     public static final String FIND_ALL= "Cancha.findAll";
 	 private Integer codigo;
 	 private String nombre;
 	 private String tipo;//	
@@ -24,7 +30,7 @@ public class Cancha {
 	 private String provincia;
 	 private String localidad;
 	 
-	/* public Cancha (Integer codigo, String nombre, String tipo,
+	public Cancha (Integer codigo, String nombre, String tipo,
 				String direccion, Integer telefono, String pais, String provincia, String localidad) {
 			super();
 			this.codigo = codigo;
@@ -38,7 +44,7 @@ public class Cancha {
 		}
 	public Cancha(){
 		super();
-	}*/
+	}
 
 
 
@@ -105,5 +111,12 @@ public class Cancha {
 	public void setLocalidad(String localidad) {
 		this.localidad = localidad;
 	}
-   
+
+    public int getIdCancha() {
+        return IdCancha;
+    }
+
+    public void setIdCancha(int idCancha) {
+        IdCancha = idCancha;
+    }
 }

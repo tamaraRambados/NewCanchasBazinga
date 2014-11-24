@@ -28,17 +28,17 @@
 <h:body>
 <f:view>
     <h:form id="mainForm">
-        <h2>Book Added !</h2>
+        <h2>Usuario Registrado!</h2>
         <h:commandLink action="back">
-            <h:outputText value="Add more books"/>
+            <h:outputText value="Registar mas usuarios"/>
         </h:commandLink>
 
 
-        <h:commandButton action="#{bookBean.fetchBooks}" value="View books present"/>
+        <h:commandButton action="#{usuarioBean.fetchUsuarios}" value="Ver Lista de usuarios"/>
 
         <br/>
-        <ui:repeat value="#{bookBean.booksAvailable}" var="book">
-            #{book.bookTitle} <br/>
+        <ui:repeat value="#{usuarioBean.usuarios}" var="usuario">
+            #{usuario.nombre} <br/>
         </ui:repeat>
 
     </h:form>
