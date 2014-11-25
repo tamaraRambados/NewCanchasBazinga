@@ -1,4 +1,4 @@
-package org.bazinga.service;
+package org.bazinga.interfaces;
 
 import org.bazinga.entities.Cancha;
 

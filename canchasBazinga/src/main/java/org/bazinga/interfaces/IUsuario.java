@@ -1,4 +1,4 @@
-package org.bazinga.service;
+package org.bazinga.interfaces;
 
 import java.util.List;
 import org.bazinga.entities.Usuario;

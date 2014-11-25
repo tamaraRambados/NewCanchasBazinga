@@ -1,4 +1,4 @@
-package org.bazinga.rest;
+package org.bazinga.implementacion.rest;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.bazinga.service.IUsuario;
-import org.bazinga.servicios.imp.UsuarioService;
+import org.bazinga.servicios.UsuarioService;
 import org.bazinga.entities.Usuario;
+import org.bazinga.interfaces.IUsuario;
 
 @Path("usuarios")
 public class UsuarioRESTService implements IUsuario{

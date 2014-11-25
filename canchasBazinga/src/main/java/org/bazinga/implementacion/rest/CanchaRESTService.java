@@ -1,8 +1,8 @@
-package org.bazinga.rest;
+package org.bazinga.implementacion.rest;
 
 import org.bazinga.entities.Cancha;
-import org.bazinga.service.ICancha;
-import org.bazinga.servicios.imp.CanchaService;
+import org.bazinga.interfaces.ICancha;
+import org.bazinga.servicios.CanchaService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -35,18 +35,19 @@ public class CanchaRESTService implements ICancha{
     public boolean modificar(Cancha cancha) {
         return false;
     }
-  	
+    @POST
+  	@Path("registrar")
     @Override
     public Response registrar(Cancha cancha) {
-        return null;
+        return (Response) canchaService.registrar(cancha);
     }
     
     
-    @POST
+    /*@POST
   	@Path("registrar")	
     public Response registrar1() {
         Cancha c= new Cancha();
-        c.setCodigo(1);
+        
         c.setDireccion("Sarmiento");
         c.setLocalidad("Resitencia");
         c.setNombre("Sarmiento");
@@ -56,7 +57,7 @@ public class CanchaRESTService implements ICancha{
         c.setTipo("2");
         return (Response) canchaService.registrar(c);
     }
-    
+    */
     @GET
 	@Path("lista")
 	@Produces(MediaType.APPLICATION_JSON)

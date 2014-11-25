@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="es" ng-app="myapp" ng-controller="controladorCanchas as cc">
+<head>
+	<meta charset="utf-8">
+	<title>BazingaCanchas</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	
+</head>
+<body >
+	<form class="canchas_form" ng-submit="cc.addCanchas()" >
+		<ul>
+			<li>
+				<h2>ALTA CANCHAS</h2>
+			</li>
+			<li>
+				<label for="direccion">Direccion :</label>
+				<input ng-model="cc.canchas.direccion" type="text" placeholder="seitor n°625" required>
+			</li>
+			<li>
+				<label for="localidad">Localidad :</label>
+			
+				<input ng-model="cc.canchas.localidad" type="text" placeholder="Resistencia" required>			
+			</li>
+			<li>
+				<label for="nombre">Nombre :</label>
+				<input ng-model="cc.canchas.nombre" type="text" placeholder="nombre de mi cancha"  required>
+			</li>
+			
+			
+			
+		
+			<li>
+				<label for="pais">Pais :</label>
+				
+				<input ng-model="cc.canchas.pais" type="text" placeholder="Argentina" required>
+			</li>
+			<li>
+				<label for="provincia">Provicia :</label>
+			
+				<input ng-model="cc.canchas.provincia" type="text" placeholder="Chaco" required>
+				
+			</li>
+			<li>
+				<label for="telefono">Telefono: </label>
+				<input ng-model="cc.canchas.telefono" type="text" placeholder="3624567834" required>
+			</li>
+			<li>
+				<label for="tipocancha">Tipo de cancha :</label>
+				<input ng-model="cc.canchas.tipo" type="text" placeholder="futbol" required>
+			</li>
+			
+			<li>
+				<input type="submit" class="btn btn-primary pull-right" value="Agregar"/>
+			</li>
+		</ul>
+	</form>
+	
+</body>
+</html>

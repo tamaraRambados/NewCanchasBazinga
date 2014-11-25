@@ -21,8 +21,7 @@ public class Cancha {
 	 private int IdCancha;
 
      public static final String FIND_ALL= "Cancha.findAll";
-	 private Integer codigo;
-	 private String nombre;
+     private String nombre;
 	 private String tipo;//	
 	 private String direccion;
 	 private Integer telefono;
@@ -30,10 +29,10 @@ public class Cancha {
 	 private String provincia;
 	 private String localidad;
 	 
-	public Cancha (Integer codigo, String nombre, String tipo,
+	/*public Cancha (Integer codigo, String nombre, String tipo,
 				String direccion, Integer telefono, String pais, String provincia, String localidad) {
 			super();
-			this.codigo = codigo;
+			
 			this.nombre = nombre;
 			this.tipo = tipo;
 			this.direccion = direccion;
@@ -41,21 +40,13 @@ public class Cancha {
 			this.pais=pais;
 			this.provincia=provincia;
 			this.localidad=localidad;
-		}
-	public Cancha(){
+	}*/	
+	 
+	/*public Cancha(){
 		super();
-	}
+	}*/
 
-
-
-	public Integer getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Integer codigo) {
-		this.codigo = codigo;
-	}
-
+	
 	public String getNombre() {
 		return nombre;
 	}

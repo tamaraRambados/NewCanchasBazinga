@@ -19,8 +19,9 @@ package org.bazinga.presentation;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import org.bazinga.entities.Usuario;
-import org.bazinga.servicios.imp.UsuarioService;
+import org.bazinga.servicios.UsuarioService;
 
 import java.util.List;
 

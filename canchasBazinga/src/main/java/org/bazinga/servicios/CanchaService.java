@@ -1,4 +1,4 @@
-package org.bazinga.servicios.imp;
+package org.bazinga.servicios;
 
 
 import org.bazinga.entities.Cancha;

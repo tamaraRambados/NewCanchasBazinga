@@ -3,7 +3,7 @@ package org.bazinga.serviciosTest.imp;
 import static org.junit.Assert.*;
 
 import org.bazinga.entities.Usuario;
-import org.bazinga.servicios.imp.UsuarioService;
+import org.bazinga.servicios.UsuarioService;
 import org.junit.Before;
 import org.junit.Test;
 
