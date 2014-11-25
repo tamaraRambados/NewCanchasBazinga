@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14168440140580" configfile="/canchasBazinga/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="result.xhtml" x="122" y="178" id="pf14168468637082" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14168752675430" inlinks="pf14168468637083" path="/result.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="usuario.xhtml" id="pf14168468637084" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf14168468637083" inlinks="pf14168752675430" path="/usuario.xhtml"/>
+  <links id="pf14168468637083" target="pf14168468637082" source="pf14168468637084" outcome="success"/>
+  <links id="pf14168752675430" target="pf14168468637084" source="pf14168468637082" outcome="back"/>
+</pageflow:Pageflow>

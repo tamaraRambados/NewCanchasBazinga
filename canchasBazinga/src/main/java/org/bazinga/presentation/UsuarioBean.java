@@ -140,7 +140,7 @@ public class UsuarioBean {
     	u.setDireccion(direccion);
     	u.setTelefono(telefono);
     	u.setTipoUsuario(tipoUsuario);
-    	u.setIdUsuario(1);
+    	//u.setIdUsuario(null);
     /*	u.setNombre("facundo");
     	u.setApellido("aguirre");
     	u.setCorreoElectronico("isifc.facu");
@@ -150,7 +150,7 @@ public class UsuarioBean {
     	u.setTelefono(356);
     	u.setTipoUsuario("cliente");*/
       
-        usuarioService.registrar(u);
+        usuarioService.registrarBean(u);
         return "success";
     }
 }

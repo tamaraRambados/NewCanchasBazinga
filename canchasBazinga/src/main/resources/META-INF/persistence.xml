@@ -19,16 +19,15 @@
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-    <persistence-unit name="cancha-pu" transaction-type="JTA">
-    <jta-data-source>canchaDatabase</jta-data-source>
-     	<class>org.bazinga.entities.Book</class>
+  
+    
+<persistence-unit name="dataBase-pu" transaction-type="JTA">
+        <jta-data-source>myDatabase</jta-data-source>
         <class>org.bazinga.entities.Cancha</class>
         <class>org.bazinga.entities.Usuario</class>
         <properties>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
         </properties>
     </persistence-unit>
-    
-
 
 </persistence>

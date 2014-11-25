@@ -2,22 +2,25 @@ package org.bazinga.servicios.imp;
 
 
 import org.bazinga.entities.Cancha;
-import org.bazinga.entities.Usuario;
 
 
+
+
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+
 import java.net.URI;
 import java.util.List;
-
+@Stateless
 public class CanchaService{
 
 
-    @PersistenceContext(unitName = "cancha-pu")
+    @PersistenceContext(unitName = "dataBase-pu")
     private EntityManager entityManager;
 
     @Context

@@ -20,7 +20,7 @@ import org.bazinga.service.IUsuario;
 @Stateless
 public class UsuarioService{
 
-	@PersistenceContext(unitName = "cancha-pu")
+	@PersistenceContext(unitName = "dataBase-pu")
     private EntityManager entityManager;
 	
 	@Context
@@ -33,21 +33,21 @@ public class UsuarioService{
 	}
 	
 	
-	public Response registrar(Usuario usuario){
-		entityManager.getTransaction().begin();	
+	public void registrarBean(Usuario usuario){	
+		//entityManager.getTransaction().begin();
 		entityManager.persist(usuario);
-		entityManager.getTransaction().commit();
-		URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getIdUsuario())).build();
-	    return Response.created(bookUri).build();
+		//entityManager.getTransaction().commit();
 	}
 	
-	/*public void registrarEstatico(){
-		Usuario u = new Usuario("isifc.facu@gmail.com",17422,"facundo","aguirre",35038452,"lopez y planes",36243,"1");
-		entityManager.getTransaction().begin();
-		entityManager.persist(u);
-		entityManager.getTransaction().commit();
-		 //URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(u.getIdUsuario())).build();
-		// return Response.created(bookUri).build();
-	}*/
+	
+	
+	public Response registrar(Usuario usuario){
+		
+		entityManager.persist(usuario);
+		URI usuarioURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getIdUsuario())).build();
+	    return Response.created(usuarioURI).build();
+	}
+
+	
 	
 }

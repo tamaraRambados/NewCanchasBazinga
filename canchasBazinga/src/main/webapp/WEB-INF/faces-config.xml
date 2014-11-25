@@ -33,7 +33,7 @@
   </navigation-rule>
 
   <navigation-rule>
-    <from-view-id>/usuario.xhtml</from-view-id>
+    <from-view-id>/result.xhtml</from-view-id>
     <navigation-case>
       <from-outcome>back</from-outcome>
       <to-view-id>/usuario.xhtml</to-view-id>

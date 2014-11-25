@@ -10,20 +10,21 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  */
 @Entity
-@XmlRootElement(name="usuarios")
-@NamedQuery(name = Usuario.FIND_ALL,query = "SELECT u FROM Usuario u")
+@XmlRootElement(name="usuarios")//Mapea una clase o una enumeración a un elemento XML. Tiene dos parámetros lo cuales especifícan el name y el namespace que tendrá este elemento en el XML.
+@NamedQuery(name = Usuario.FIND_ALL,query = "SELECT u FROM Usuario u")// consulta con nombre
 public class Usuario{
 	 public static final String FIND_ALL= "Usuario.findAll";
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int IdUsuario;
+	private long IdUsuario;
 	
 	
-	public int getIdUsuario() {
+	
+	public long getIdUsuario() {
 		return IdUsuario;
 	}
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(long idUsuario) {
 		IdUsuario = idUsuario;
 	}
 	private String correoElectronico;
