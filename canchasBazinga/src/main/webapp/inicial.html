@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>  
+<script type="text/javascript">  
+$(document).ready(function(){  
+  
+    $('#boton_cargar').click(function() {  
+        $.ajax({  
+            url: 'canchas.html',  
+            success: function(data) {  
+                $('#div_dinamico').html(data);  
+            }  
+        });  
+    });  
+  
+    $('#boton_cargar_anim').click(function() {  
+        $.ajax({  
+            url: 'canchas.html',  
+            success: function(data) {  
+                $('#div_dinamico_anim').html(data);  
+                $('#div_dinamico_anim div').slideDown(1000);  
+            }  
+        });  
+    });  
+  
+});  
+</script>  
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<input name="boton_cargar" id="boton_cargar" type="button" value="Cargar contenido" />  
+  
+<div name="div_dinamico" id="div_dinamico" class="div_dinamico"></div> 
+
+</body>
+</html>
