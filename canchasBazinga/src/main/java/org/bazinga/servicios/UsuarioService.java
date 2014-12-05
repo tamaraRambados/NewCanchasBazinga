@@ -31,20 +31,12 @@ public class UsuarioService{
 		TypedQuery<Usuario> query = entityManager.createNamedQuery(Usuario.FIND_ALL,Usuario.class);
 		return query.getResultList();	
 	}
-	
-	
-	public void registrarBean(Usuario usuario){	
-		//entityManager.getTransaction().begin();
-		entityManager.persist(usuario);
-		//entityManager.getTransaction().commit();
-	}
-	
-	
+
 	
 	public Response registrar(Usuario usuario){
 		
 		entityManager.persist(usuario);
-		URI usuarioURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getIdUsuario())).build();
+		URI usuarioURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getUsuarioId())).build();
 	    return Response.created(usuarioURI).build();
 	}
 

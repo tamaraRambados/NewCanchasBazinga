@@ -18,5 +18,5 @@
 -->
 <%@ page session="false" %>
 <%
-    response.sendRedirect("usuario.jsf");
+    response.sendRedirect("canchas.html");
 %>

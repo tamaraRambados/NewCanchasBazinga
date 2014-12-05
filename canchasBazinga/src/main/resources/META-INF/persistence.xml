@@ -25,6 +25,11 @@
         <jta-data-source>myDatabase</jta-data-source>
         <class>org.bazinga.entities.Cancha</class>
         <class>org.bazinga.entities.Usuario</class>
+        <class>org.bazinga.entities.Direccion</class>
+        <class>org.bazinga.entities.Establecimiento</class>
+        <class>org.bazinga.entities.UsuarioDueño</class>
+        <class>org.bazinga.entities.UsuarioRegistrado</class>
+
         <properties>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
         </properties>

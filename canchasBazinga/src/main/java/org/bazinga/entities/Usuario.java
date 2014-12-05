@@ -4,6 +4,9 @@ package org.bazinga.entities;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 /**
  * Entity implementation class for Entity: Usuario
@@ -17,24 +20,46 @@ public class Usuario{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long IdUsuario;
-	
-	
-	
-	public long getIdUsuario() {
-		return IdUsuario;
-	}
-	public void setIdUsuario(long idUsuario) {
-		IdUsuario = idUsuario;
-	}
-	private String correoElectronico;
+	private long UsuarioId;
+
+    @OneToMany
+    private java.util.List<Alquiler> listaAlquileres;
+
+    @ManyToOne
+    private Direccion direccion;
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+
+    private String correoElectronico;
 	private Integer nroUsuario;
 	private String nombre;
 	private String apellido;
 	private Integer dni;
-	private String direccion;
+
 	private Integer telefono;
 	private String tipoUsuario;
+
+
+    public long getUsuarioId() {
+        return UsuarioId;
+    }
+
+    public void setUsuarioId(long usuarioId) {
+        UsuarioId = usuarioId;
+    }
+    public List<Alquiler> getListaAlquileres() {
+        return listaAlquileres;
+    }
+
+    public void setListaAlquileres(List<Alquiler> listaAlquileres) {
+        this.listaAlquileres = listaAlquileres;
+    }
 	
 	public String getTipoUsuario() {
 		return tipoUsuario;
@@ -78,25 +103,8 @@ public class Usuario{
 	public void setDni(Integer dni) {
 		this.dni = dni;
 	}
-	public String getDireccion() {
-		return direccion;
-	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-	
-	/*public Usuario(String correoElectronico, Integer nroUsuario, String nombre,
-			String apellido, Integer dni, String direccion, Integer telefono, String tipoUsuario) {
-		super();
-		this.correoElectronico = correoElectronico;
-		this.nroUsuario = nroUsuario;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.dni = dni;
-		this.direccion = direccion;
-		this.telefono=telefono;
-		this.tipoUsuario=tipoUsuario;
-	}*/
+
+
 	
 	
    

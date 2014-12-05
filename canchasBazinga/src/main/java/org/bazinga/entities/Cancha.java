@@ -4,50 +4,45 @@ package org.bazinga.entities;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
 
-/**
- * Entity implementation class for Entity: Cancha
- *
-
- */
 
 @Entity
 @XmlRootElement(name="canchas")
 @NamedQuery(name = Cancha.FIND_ALL,query = "SELECT c FROM Cancha c")
 public class Cancha {
-	
+    public static final String FIND_ALL= "Cancha.findAll";
+
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private int IdCancha;
 
-     public static final String FIND_ALL= "Cancha.findAll";
-     private String nombre;
-	 private String tipo;//	
-	 private String direccion;
-	 private Integer telefono;
-	 private String pais;
-	 private String provincia;
-	 private String localidad;
-	 
-	/*public Cancha (Integer codigo, String nombre, String tipo,
-				String direccion, Integer telefono, String pais, String provincia, String localidad) {
-			super();
-			
-			this.nombre = nombre;
-			this.tipo = tipo;
-			this.direccion = direccion;
-			this.telefono = telefono;
-			this.pais=pais;
-			this.provincia=provincia;
-			this.localidad=localidad;
-	}*/	
-	 
-	/*public Cancha(){
-		super();
-	}*/
 
-	
-	public String getNombre() {
+    @ManyToOne
+    private Establecimiento establecimiento;
+
+
+    private String nombre;
+	private String tipo;
+    private double precio;
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public Establecimiento getEstablecimiento() {
+        return establecimiento;
+    }
+
+    public void setEstablecimiento(Establecimiento establecimiento) {
+        this.establecimiento = establecimiento;
+    }
+
+    public String getNombre() {
 		return nombre;
 	}
 
@@ -61,46 +56,6 @@ public class Cancha {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
-	public Integer getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(Integer telefono) {
-		this.telefono = telefono;
-	}
-
-	public String getPais() {
-		return pais;
-	}
-
-	public void setPais(String pais) {
-		this.pais = pais;
-	}
-
-	public String getProvincia() {
-		return provincia;
-	}
-
-	public void setProvincia(String provincia) {
-		this.provincia = provincia;
-	}
-
-	public String getLocalidad() {
-		return localidad;
-	}
-
-	public void setLocalidad(String localidad) {
-		this.localidad = localidad;
 	}
 
     public int getIdCancha() {

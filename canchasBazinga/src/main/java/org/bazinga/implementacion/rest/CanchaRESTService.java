@@ -16,48 +16,30 @@ import java.util.List;
 @Path("canchas")
 public class CanchaRESTService implements ICancha{
 
+    @Override
+    public Response eliminar(Cancha cancha) {
+        return null;
+    }
+
+    @Override
+    public Response acutalizar(Cancha cancha) {
+        return null;
+    }
 
     @Inject
     CanchaService canchaService;
     
     
-    @Override
-    public boolean alta(Cancha cancha) {
-        return false;
-    }
 
-    @Override
-    public boolean baja(Cancha cancha) {
-        return false;
-    }
-
-    @Override
-    public boolean modificar(Cancha cancha) {
-        return false;
-    }
     @POST
   	@Path("registrar")
     @Override
     public Response registrar(Cancha cancha) {
         return (Response) canchaService.registrar(cancha);
     }
-    
-    
-    /*@POST
-  	@Path("registrar")	
-    public Response registrar1() {
-        Cancha c= new Cancha();
-        
-        c.setDireccion("Sarmiento");
-        c.setLocalidad("Resitencia");
-        c.setNombre("Sarmiento");
-        c.setPais("Argentina");
-        c.setProvincia("Chaco");
-        c.setTelefono(364);
-        c.setTipo("2");
-        return (Response) canchaService.registrar(c);
-    }
-    */
+
+
+
     @GET
 	@Path("lista")
 	@Produces(MediaType.APPLICATION_JSON)
