@@ -3,9 +3,10 @@ package org.bazinga.entities;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.awt.*;
-import java.util.*;
+
 import java.util.List;
 
 /**
@@ -22,30 +23,33 @@ public class Usuario{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long UsuarioId;
 
-    
-    private java.util.List<Alquiler> listaAlquileres;
+    @OneToMany(fetch=FetchType.LAZY)
+    private List<Alquiler> listaAlquileres;
 
     @ManyToOne
     private Direccion direccion;
-
-    public Direccion getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
-
+    
+    @NotNull
     private String correoElectronico;
-	private Integer nroUsuario;
+    @NotNull
 	private String nombre;
+    @NotNull
 	private String apellido;
+    @Digits(integer=20,fraction=0)
 	private Integer dni;
-
+	
+	@Digits(integer=20,fraction=0)
 	private Integer telefono;
-	private String tipoUsuario;
+	
+	
+	
+	public Direccion getDireccion() {
+	        return direccion;
+	}
 
-
+	public void setDireccion(Direccion direccion) {
+	        this.direccion = direccion;
+	}
     public long getUsuarioId() {
         return UsuarioId;
     }
@@ -61,12 +65,7 @@ public class Usuario{
         this.listaAlquileres = listaAlquileres;
     }
 	
-	public String getTipoUsuario() {
-		return tipoUsuario;
-	}
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
-	}
+	
 	public Integer getTelefono() {
 		return telefono;
 	}
@@ -79,12 +78,7 @@ public class Usuario{
 	public void setCorreoElectronico(String correoElectronico) {
 		this.correoElectronico = correoElectronico;
 	}
-	public Integer getNroUsuario() {
-		return nroUsuario;
-	}
-	public void setNroUsuario(Integer nroUsuario) {
-		this.nroUsuario = nroUsuario;
-	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -102,10 +96,7 @@ public class Usuario{
 	}
 	public void setDni(Integer dni) {
 		this.dni = dni;
-	}
-
-
-	
-	
+	}	
    
 }
+

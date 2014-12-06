@@ -18,5 +18,5 @@
 -->
 <%@ page session="false" %>
 <%
-    response.sendRedirect("canchas.html");
+    response.sendRedirect("initializr/index.html");
 %>

@@ -1,7 +1,9 @@
 package org.bazinga.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+
 import java.util.List;
 import java.util.Set;
 
@@ -14,15 +16,25 @@ public class Establecimiento {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long EstablecimientoId;
     
+    //relaciones
     
-    @ManyToMany
-    private List<UsuarioDueño> usuarioDueños;
-
-    @OneToMany
+    @OneToMany(fetch=FetchType.LAZY)
     private List<Cancha> listacanchas;
-
     @ManyToOne
     private Direccion direccion;
+    @ManyToMany
+    private List<UsuarioDueño> usuarioDueños;
+    
+    
+    @NotNull
+    private String nombre;
+    private Integer telefono;
+    
+    @NotNull
+    private String pais;
+    
+    @NotNull
+    private String provincia;
 
     public static final String FIND_ALL= "Establecimiento.findAll";
 
@@ -44,15 +56,7 @@ public class Establecimiento {
     public void setListacanchas(List<Cancha> listacanchas) {
         this.listacanchas = listacanchas;
     }
-
-    private String nombre;
-    private Integer telefono;
-
-    private String pais;
-    private String provincia;
-
-
-
+    
     public String getNombre() {
         return nombre;
     }

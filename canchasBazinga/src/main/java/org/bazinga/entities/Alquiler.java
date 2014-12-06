@@ -2,6 +2,8 @@ package org.bazinga.entities;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import java.util.Date;
 
 @Entity
@@ -14,7 +16,13 @@ public class Alquiler {
     @ManyToOne
     private Usuario usuario;
     
+    @ManyToOne
+    private Cancha cancha;
+
+    @NotNull
     private Date FechaReserva;
+    
+    @NotNull
     private Date FechaAlquiler;
     
     @Enumerated(EnumType.STRING)
@@ -62,7 +70,6 @@ public class Alquiler {
         this.importe = importe;
     }
 }
-
 
 enum Estado{
     Reservado,
