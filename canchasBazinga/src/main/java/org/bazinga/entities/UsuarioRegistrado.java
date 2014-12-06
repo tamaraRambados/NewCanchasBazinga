@@ -14,5 +14,19 @@ public class UsuarioRegistrado extends Usuario{
 	@NotNull
 	@Size(min=6,max=20)
 	private String pass;
+	public String getNickName() {
+		return nickName;
+	}
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	
+	
 	
 }

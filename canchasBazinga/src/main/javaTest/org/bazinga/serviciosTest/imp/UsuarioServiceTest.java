@@ -23,10 +23,10 @@ public class UsuarioServiceTest {
 		u.setDni(35038452);
 		//u.("lopez y planes");
 		u.setTelefono(36243);
-		u.setTipoUsuario("cliente");
+		//.setTipoUsuario("cliente");
 		usuarioService= new UsuarioService();
 		
-		assertNotNull("error",usuarioService.registrar(u));
+		assertNull("error",usuarioService.registrar(u));
 	}
 
 }
