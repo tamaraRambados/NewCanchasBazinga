@@ -8,25 +8,18 @@ import java.util.List;
 @Entity
 public class UsuarioDueño extends Usuario{
 
-    @ManyToMany
-    private List<Establecimiento> listaEstablecimientos;
 
-    public List<Establecimiento> getListaEstablecimientos() {
-        return listaEstablecimientos;
-    }
+    @ManyToMany(mappedBy="usuarioDueños")
+    private List<Establecimiento> establecimientos;
 
-    public void setListaEstablecimientos(List<Establecimiento> listaEstablecimientos) {
-        this.listaEstablecimientos = listaEstablecimientos;
-    }
-
-    @ManyToMany(mappedBy = "usuarioDueños")
-    private Collection<Establecimiento> establecimientos;
-
-    public Collection<Establecimiento> getEstablecimientos() {
+    public List<Establecimiento> getEstablecimientos() {
         return establecimientos;
     }
 
-    public void setEstablecimientos(Collection<Establecimiento> establecimientos) {
+    public void setEstablecimientos(List<Establecimiento> establecimientos) {
         this.establecimientos = establecimientos;
     }
+    
+    
+    
 }

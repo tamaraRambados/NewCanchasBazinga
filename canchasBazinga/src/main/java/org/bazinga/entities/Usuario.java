@@ -22,7 +22,7 @@ public class Usuario{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long UsuarioId;
 
-    @OneToMany
+    
     private java.util.List<Alquiler> listaAlquileres;
 
     @ManyToOne

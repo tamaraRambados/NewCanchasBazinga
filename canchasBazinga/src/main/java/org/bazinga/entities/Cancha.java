@@ -17,10 +17,7 @@ public class Cancha {
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private int IdCancha;
 
-
-    @ManyToOne
     private Establecimiento establecimiento;
-
 
     private String nombre;
 	private String tipo;

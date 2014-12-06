@@ -14,10 +14,10 @@ public class Direccion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long DireccionId;
 
-    @OneToMany
+    
     private List<Usuario> listaUsuario;
 
-    @OneToMany
+    
     private List<Cancha> listaCancha;
 
 

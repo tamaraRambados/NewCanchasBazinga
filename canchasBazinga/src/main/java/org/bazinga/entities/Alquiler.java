@@ -12,12 +12,14 @@ public class Alquiler {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name='UsuarioId',referencedColumnName = 'UsuarioId')
     private Usuario usuario;
-
+    
     private Date FechaReserva;
     private Date FechaAlquiler;
+    
+    @Enumerated(EnumType.STRING)
     private Estado estado;
+    
     private double importe;
 
     public long getId() {
@@ -60,6 +62,7 @@ public class Alquiler {
         this.importe = importe;
     }
 }
+
 
 enum Estado{
     Reservado,

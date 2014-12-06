@@ -13,6 +13,16 @@ public class Establecimiento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long EstablecimientoId;
+    
+    
+    @ManyToMany
+    private List<UsuarioDueño> usuarioDueños;
+
+    @OneToMany
+    private List<Cancha> listacanchas;
+
+    @ManyToOne
+    private Direccion direccion;
 
     public static final String FIND_ALL= "Establecimiento.findAll";
 
@@ -25,18 +35,7 @@ public class Establecimiento {
         EstablecimientoId = establecimientoId;
     }
 
-    @ManyToMany
-    @JoinTable(name = "Dueños_Establecimientos",
-            joinColumns = {@JoinColumn(name = "UsuarioId")},
-            inverseJoinColumns = {@JoinColumn(name="EstablecimientoId")})
-    private List<UsuarioDueño> usuarioDueños;
-
-
-    @OneToMany
-    private List<Cancha> listacanchas;
-
-    @ManyToOne
-    private Direccion direccion;
+    
 
     public List<Cancha> getListacanchas() {
         return listacanchas;
