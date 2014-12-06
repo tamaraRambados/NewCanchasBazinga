@@ -25,8 +25,10 @@ public class Alquiler {
     @NotNull
     private Date FechaAlquiler;
     
-    @Enumerated(EnumType.STRING)
-    private Estado estado;
+    
+    
+    /*@Enumerated(EnumType.STRING)
+    private Estado estado;*/
     
     private double importe;
 
@@ -54,13 +56,13 @@ public class Alquiler {
         FechaAlquiler = fechaAlquiler;
     }
 
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
+//    public Estado getEstado() {
+//        return estado;
+//    }
+//
+//    public void setEstado(Estado estado) {
+//        this.estado = estado;
+//    }
 
     public double getImporte() {
         return importe;

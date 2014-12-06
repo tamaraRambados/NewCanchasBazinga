@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Entity
 @XmlRootElement(name="establecimientos")
-@NamedNativeQuery(name= Establecimiento.FIND_ALL, query = "SELECT e FROM Establecimiento e")
+@NamedQuery(name= Establecimiento.FIND_ALL, query = "SELECT e FROM Establecimiento e")
 public class Establecimiento {
 
     @Id
