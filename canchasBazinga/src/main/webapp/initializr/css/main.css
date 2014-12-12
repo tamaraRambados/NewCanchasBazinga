@@ -85,6 +85,7 @@ body {
 
 .header-container,
 .footer-container,
+
 .main aside {
     background: #f16529;
 }
@@ -229,11 +230,11 @@ nav a:hover {
    ============ */
 
     .title {
-        float: left;
+        float: right;
     }
 
     nav {
-        float: right;
+        float: left;
         width: 38%;
     }
 
@@ -242,14 +243,45 @@ nav a:hover {
    ============ */
 
     .main article {
-        float: left;
+        float: right;
         width: 57%;
     }
 
     .main aside {
-        float: right;
+        float: left;
         width: 28%;
+
     }
+    
+    .main aside ul li{
+        text-decoration: none;
+        color: white;
+        padding: 10.5px 11px;
+        background-color: #e44d26;
+        display:block;
+    }
+
+    .main aside ul{
+        margin: 0;
+        padding: 0;
+        width:28%;
+        list-style-type: none;
+
+    }
+
+    .main aside ul li a:visited {
+        color: white;
+    }
+
+    .main aside ul li a:hover, aside ul li a .current{
+        color: white;
+
+    }
+
+    .main aside ul li a:link{
+        text-decoration: none;
+    }
+
 }
 
 @media only screen and (min-width: 1140px) {

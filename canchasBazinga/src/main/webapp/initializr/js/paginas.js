@@ -4,7 +4,7 @@
 	app.directive('canchaRegistar',function(){
 		return{			
 			restrict:'E',
-			templeteUrl:'canchas.html',
-		}
+			templeteUrl:'canchas-registar.html',
+		};
 	});
-});
+})();

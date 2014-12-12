@@ -1,4 +1,4 @@
-(function(){
+/*(function(){
 	
 	var app= angular.module('myapp',['myapp-paginas']);
 	
@@ -11,3 +11,37 @@
 		
 	});
 })();
+*/
+
+angular.module('myapp',['ngRoute'])
+	   .config(function($routeProvider){
+		   $routeProvider
+		   
+		   .when('/home',{
+			   templateUrl:'/canchasBazinga/initializr/index.html'
+		   })
+		   
+		   .when('/canchas-registrar',{
+			   templateUrl:'/canchasBazinga/initializr/canchas-registrar.html'
+		   })
+
+		   .when('/establecimiento',{
+			   templateUrl:'/canchasBazinga/initializr/establecimiento.html'
+		   });
+
+	   })
+	   
+	   .directive('canchasRegistrar',function(){
+			return{			
+				restrict:'E',
+				templateUrl:'canchas-registrar.html'
+			};
+	   });
+
+	   
+	   
+	   
+	   
+	   
+	   
+	   
