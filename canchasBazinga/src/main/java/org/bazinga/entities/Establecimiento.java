@@ -29,12 +29,7 @@ public class Establecimiento {
     @NotNull
     private String nombre;
     private Integer telefono;
-    
-    @NotNull
-    private String pais;
-    
-    @NotNull
-    private String provincia;
+   
 
     public static final String FIND_ALL= "Establecimiento.findAll";
 
@@ -82,19 +77,5 @@ public class Establecimiento {
     }
 
 
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public String getProvincia() {
-        return provincia;
-    }
-
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
-    }
+    
 }

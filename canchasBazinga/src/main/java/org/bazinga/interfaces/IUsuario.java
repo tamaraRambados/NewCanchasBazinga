@@ -4,6 +4,7 @@ import java.util.List;
 import org.bazinga.entities.Usuario;
 
 public interface IUsuario {
+	
 	public List<Usuario> getAllUsuario();
     public boolean alta(Usuario usuario);
     public boolean baja(Usuario usuario);
