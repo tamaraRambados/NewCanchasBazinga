@@ -24,7 +24,7 @@ public class Cancha {
     private Establecimiento establecimiento;
     
     @NotNull
-    private String nombre;
+    private int numero;
     @NotNull
 	private String tipo;
     @Digits(integer=4,fraction=2)
@@ -46,13 +46,6 @@ public class Cancha {
         this.establecimiento = establecimiento;
     }
 
-    public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 
 	public String getTipo() {
 		return tipo;
