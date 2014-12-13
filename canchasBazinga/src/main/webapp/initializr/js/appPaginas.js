@@ -13,7 +13,7 @@
 })();
 */
 
-angular.module('myapp',['ngRoute'])
+angular.module('myapp3',['ngRoute'])
 	   .config(function($routeProvider){
 		   $routeProvider
 		   

@@ -25,7 +25,7 @@ public class EstablecimientoRESTService implements IEstablecimiento {
     @POST
     @Override
     public Response registrar(Establecimiento establecimiento) {
-        return null;
+        return  establecimientoService.registrar(establecimiento);
     }
 
     @Path("lista")

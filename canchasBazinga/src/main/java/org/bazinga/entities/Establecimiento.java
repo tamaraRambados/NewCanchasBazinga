@@ -18,12 +18,14 @@ public class Establecimiento {
     
     //relaciones
     
-    @OneToMany(fetch=FetchType.LAZY)
-    private List<Cancha> listacanchas;
-    @ManyToOne
-    private Direccion direccion;
-    @ManyToMany
-    private List<UsuarioDueño> usuarioDueños;
+   /* @OneToMany(fetch=FetchType.LAZY)
+    * 
+    private List<Cancha> listacanchas;*/
+  
+   
+    private String direccion;
+   /* @ManyToMany
+    private List<UsuarioDueño> usuarioDueños;*/
     
     
     @NotNull
@@ -44,17 +46,17 @@ public class Establecimiento {
 
     
 
-    public List<Cancha> getListacanchas() {
-        return listacanchas;
-    }
+//    public List<Cancha> getListacanchas() {
+//        return listacanchas;
+//    }
 
-    public void setListacanchas(List<Cancha> listacanchas) {
+   /* public void setListacanchas(List<Cancha> listacanchas) {
         this.listacanchas = listacanchas;
-    }
+    }*/
     
     public String getNombre() {
         return nombre;
-    }
+    }/*
 
     public List<UsuarioDueño> getUsuarioDueños() {
         return usuarioDueños;
@@ -62,7 +64,7 @@ public class Establecimiento {
 
     public void setUsuarioDueños(List<UsuarioDueño> usuarioDueños) {
         this.usuarioDueños = usuarioDueños;
-    }
+    }*/
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

@@ -20,7 +20,8 @@ public class Cancha {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int IdCancha;
-
+	
+	@NotNull
     private Establecimiento establecimiento;
     
     @NotNull

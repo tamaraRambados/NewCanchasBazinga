@@ -12,18 +12,18 @@ import java.util.List;
 public class UsuarioDueño extends Usuario{
 
 
-    @ManyToMany(mappedBy="usuarioDueños",fetch=FetchType.LAZY)
-    private List<Establecimiento> establecimientos;
+   /* @ManyToMany(mappedBy="usuarioDueños",fetch=FetchType.LAZY)
+    private List<Establecimiento> establecimientos;*/
     
     @OneToMany(fetch=FetchType.LAZY)
     private List<EstadoCuenta> estadoCuentas;
 
-    public List<Establecimiento> getEstablecimientos() {
+   /* public List<Establecimiento> getEstablecimientos() {
         return establecimientos;
     }
     public void setEstablecimientos(List<Establecimiento> establecimientos) {
         this.establecimientos = establecimientos;
-    }
+    }*/
     
     
     
