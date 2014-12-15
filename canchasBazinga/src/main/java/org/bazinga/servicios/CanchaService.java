@@ -6,6 +6,8 @@ import org.bazinga.entities.Cancha;
 
 
 
+import org.bazinga.interfaces.ICancha;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -17,7 +19,7 @@ import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 import java.util.List;
 @Stateless
-public class CanchaService{
+public class CanchaService implements ICancha{
 
 
     @PersistenceContext(unitName = "dataBase-pu")
@@ -30,12 +32,27 @@ public class CanchaService{
         TypedQuery<Cancha> query = entityManager.createNamedQuery(Cancha.FIND_ALL,Cancha.class);
         return query.getResultList();
     }
-
+    
+    @Override
     public Response registrar(Cancha cancha){
         entityManager.persist(cancha);
         URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(cancha.getIdCancha())).build();
         return Response.created(bookUri).build();
     }
+
+	@Override
+	public Response eliminar(Cancha cancha) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Response acutalizar(Cancha cancha) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 
 
