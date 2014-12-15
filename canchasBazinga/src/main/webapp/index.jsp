@@ -18,5 +18,5 @@
 -->
 <%@ page session="false" %>
 <%
-    response.sendRedirect("initializr/index.html");
+    response.sendRedirect("tuPartidito/inicio.html");
 %>
