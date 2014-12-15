@@ -18,15 +18,15 @@ angular.module('myapp',['ngRoute'])
 		   $routeProvider
 		   
 		   .when('/home',{
-			   templateUrl:'/canchasBazinga/initializr/index.html'
+			   templateUrl:'/canchasBazinga/tuPartidito/index.html'
 		   })
 		   
 		   .when('/canchas-registrar',{
-			   templateUrl:'/canchasBazinga/initializr/canchas-registrar.html'
+			   templateUrl:'/canchasBazinga/tuPartidito/canchas-registrar.html'
 		   })
 
 		   .when('/establecimiento',{
-			   templateUrl:'/canchasBazinga/initializr/establecimiento.html'
+			   templateUrl:'/canchasBazinga/tuPartidito/establecimiento.html'
 		   });
 
 	   })
