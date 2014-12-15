@@ -18,10 +18,13 @@ public class Direccion {
 
     @OneToMany(fetch=FetchType.LAZY)
     private List<Usuario> listaUsuario;
+    
     @OneToMany(fetch=FetchType.LAZY)
     private List<Establecimiento> listaEstablecimiento;
+    
     @NotNull
     private String calle;
+    
     @NotNull
     private int numero;
 	public long getDireccionId() {
