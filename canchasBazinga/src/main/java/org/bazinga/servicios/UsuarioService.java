@@ -15,10 +15,9 @@ import javax.ws.rs.core.UriInfo;
 
 import org.bazinga.entities.Usuario;
 import org.bazinga.interfaces.IUsuario;
-//no puedo hacer que implemente IUsuario porque parece que deja de ser un EJB, *** PREGUNTA A DARIO ****
-//Como metemos interfaces si al final despues no nos deja hacer la inyeccion de dependecia, salvo que agreguemos una capa mas
+
 @Stateless
-public class UsuarioService{
+public class UsuarioService implements IUsuario{
 
 	@PersistenceContext(unitName = "dataBase-pu")
     private EntityManager entityManager;
@@ -26,18 +25,40 @@ public class UsuarioService{
 	@Context
 	private UriInfo uriInfo;
 	
-	
-	public List<Usuario> getUsuario() {		
+	public Response registrar(Usuario usuario){	
+		entityManager.persist(usuario);
+		URI usuarioURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getUsuarioId())).build();
+	    return Response.created(usuarioURI).build();
+	}
+
+
+	@Override
+	public List<Usuario> getAllUsuario() {
 		TypedQuery<Usuario> query = entityManager.createNamedQuery(Usuario.FIND_ALL,Usuario.class);
 		return query.getResultList();	
 	}
 
-	
-	public Response registrar(Usuario usuario){
-		
-		entityManager.persist(usuario);
-		URI usuarioURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getUsuarioId())).build();
-	    return Response.created(usuarioURI).build();
+
+
+
+	@Override
+	public boolean loguearse(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public Response eliminar(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Response modificar(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

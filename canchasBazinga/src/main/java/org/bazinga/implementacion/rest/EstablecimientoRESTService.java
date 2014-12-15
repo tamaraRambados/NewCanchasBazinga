@@ -19,13 +19,13 @@ public class EstablecimientoRESTService implements IEstablecimiento {
 
 
     @Inject
-    EstablecimientoService establecimientoService;
+    IEstablecimiento iEstablecimiento;
 
     @Path("registrar")
     @POST
     @Override
     public Response registrar(Establecimiento establecimiento) {
-        return  establecimientoService.registrar(establecimiento);
+        return  iEstablecimiento.registrar(establecimiento);
     }
 
     @Path("lista")
@@ -33,6 +33,6 @@ public class EstablecimientoRESTService implements IEstablecimiento {
     @Produces(MediaType.APPLICATION_JSON)
     @Override
     public List<Establecimiento> getAllEstablecimientos() {
-        return establecimientoService.getAllEstablecimientos();
+        return iEstablecimiento.getAllEstablecimientos();
     }
 }

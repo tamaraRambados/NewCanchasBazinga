@@ -2,7 +2,7 @@ package org.bazinga.interfaces;
 
 import org.bazinga.entities.Cancha;
 
-import javax.xml.ws.Response;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 public interface ICancha {

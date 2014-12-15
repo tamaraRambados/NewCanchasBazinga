@@ -14,7 +14,7 @@ import java.net.URI;
 import java.util.List;
 
 @Stateless
-public class EstablecimientoService {
+public class EstablecimientoService implements IEstablecimiento{
 
 
     @PersistenceContext(unitName = "dataBase-pu")

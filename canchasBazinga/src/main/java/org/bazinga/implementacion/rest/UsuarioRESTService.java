@@ -18,30 +18,17 @@ import org.bazinga.interfaces.IUsuario;
 public class UsuarioRESTService implements IUsuario{
 
 	@Inject
-	UsuarioService usuarioService;
+	IUsuario iUsuario;
 	
 	
 	@GET
 	@Path("lista")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Usuario> getAllUsuario(){
-	 	return usuarioService.getUsuario(); 			
+	 	return iUsuario.getAllUsuario(); 			
 	}
 
-    @Override
-    public boolean alta(Usuario usuario) {
-        return false;
-    }
 
-    @Override
-    public boolean baja(Usuario usuario) {
-        return false;
-    }
-
-    @Override
-    public boolean modificar(Usuario usuario) {
-        return false;
-    }
 
     @Override
     public boolean loguearse(Usuario usuario) {
@@ -51,8 +38,32 @@ public class UsuarioRESTService implements IUsuario{
     @POST
     @Path("registrar")
     public Response guardar(Usuario u){
-    	return usuarioService.registrar(u);
+    	return iUsuario.registrar(u);
     }
+
+
+
+	@Override
+	public Response registrar(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public Response eliminar(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	@Override
+	public Response modificar(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 	
