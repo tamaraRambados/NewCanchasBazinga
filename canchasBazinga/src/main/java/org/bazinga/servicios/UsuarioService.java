@@ -55,8 +55,10 @@ public class UsuarioService implements IUsuario{
 	}
 
 
+	
+
 	@Override
-	public Response modificar(Usuario usuario) {
+	public Object actualizar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}

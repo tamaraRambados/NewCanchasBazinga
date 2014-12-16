@@ -38,7 +38,7 @@ public class UsuarioRESTService{
     @POST
     @Path("registrar")
     public Response guardar(Usuario u){
-    	return iUsuario.registrar(u);
+    	return (Response)iUsuario.registrar(u);
     }
 
 

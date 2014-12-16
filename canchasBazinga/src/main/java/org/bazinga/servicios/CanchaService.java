@@ -6,6 +6,7 @@ import org.bazinga.entities.Cancha;
 
 
 
+import org.bazinga.entities.Establecimiento;
 import org.bazinga.interfaces.ICancha;
 
 import javax.ejb.Stateless;
@@ -17,6 +18,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import java.net.URI;
+import java.util.Calendar;
 import java.util.List;
 @Stateless
 public class CanchaService implements ICancha{
@@ -47,7 +49,26 @@ public class CanchaService implements ICancha{
 	}
 
 	@Override
-	public Response acutalizar(Cancha cancha) {
+	public Object actualizar(Cancha cancha) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cancha> getCanchaPorEstablecimiento(
+			Establecimiento establecimiento) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cancha> getCanchaPorFecha(Calendar date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cancha> getCanchasLibre(Calendar date) {
 		// TODO Auto-generated method stub
 		return null;
 	}

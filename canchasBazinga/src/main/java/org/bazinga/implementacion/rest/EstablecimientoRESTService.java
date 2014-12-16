@@ -24,7 +24,7 @@ public class EstablecimientoRESTService {
     @Path("registrar")
     @POST
     public Response registrar(Establecimiento establecimiento) {
-        return  iEstablecimiento.registrar(establecimiento);
+        return  (Response)iEstablecimiento.registrar(establecimiento);
     }
 
     @Path("lista")

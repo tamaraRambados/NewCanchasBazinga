@@ -19,12 +19,10 @@ public class CanchaRESTService {
 	@Inject
     ICancha iCanchas;
 
-
     public Response eliminar(Cancha cancha) {
         return null;
     }
-
-
+    
     public Response acutalizar(Cancha cancha) {
         return null;
     }
@@ -32,7 +30,7 @@ public class CanchaRESTService {
     @POST
   	@Path("registrar")
     public Response registrar(Cancha cancha) {
-        return iCanchas.registrar(cancha);
+        return (Response)iCanchas.registrar(cancha);
     }
 
     @GET
