@@ -15,7 +15,7 @@ import java.awt.*;
 import java.util.List;
 
 @Path("establecimientos")
-public class EstablecimientoRESTService implements IEstablecimiento {
+public class EstablecimientoRESTService {
 
 
     @Inject
@@ -23,7 +23,6 @@ public class EstablecimientoRESTService implements IEstablecimiento {
 
     @Path("registrar")
     @POST
-    @Override
     public Response registrar(Establecimiento establecimiento) {
         return  iEstablecimiento.registrar(establecimiento);
     }
@@ -31,7 +30,6 @@ public class EstablecimientoRESTService implements IEstablecimiento {
     @Path("lista")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Override
     public List<Establecimiento> getAllEstablecimientos() {
         return iEstablecimiento.getAllEstablecimientos();
     }

@@ -15,7 +15,7 @@ import org.bazinga.entities.Usuario;
 import org.bazinga.interfaces.IUsuario;
 
 @Path("usuarios")
-public class UsuarioRESTService implements IUsuario{
+public class UsuarioRESTService{
 
 	@Inject
 	IUsuario iUsuario;
@@ -30,7 +30,7 @@ public class UsuarioRESTService implements IUsuario{
 
 
 
-    @Override
+
     public boolean loguearse(Usuario usuario) {
         return false;
     }
@@ -43,7 +43,7 @@ public class UsuarioRESTService implements IUsuario{
 
 
 
-	@Override
+
 	public Response registrar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return null;
@@ -51,7 +51,7 @@ public class UsuarioRESTService implements IUsuario{
 
 
 
-	@Override
+
 	public Response eliminar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return null;
@@ -59,7 +59,6 @@ public class UsuarioRESTService implements IUsuario{
 
 
 
-	@Override
 	public Response modificar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return null;

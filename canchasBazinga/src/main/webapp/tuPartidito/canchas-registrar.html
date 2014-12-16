@@ -6,7 +6,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="css/estilo.css"> -->
 
 <script src="angular/angular.js"></script>
-<script src="js/app.js"></script>
+<script src="js/appPaginas.js"></script>
 
 </head>
 
@@ -17,10 +17,10 @@
 			<li>
 				<h2>ALTA CANCHAS</h2>
 			</li>
-			<li>
+			<li ng-controller="controladorEstablecimiento as ce">
 				<label for="establecimiento">Establecimiento</label>
-				<select ng-repeat="es in establecimiento">
-					
+				<select ng-repeat="es in establecimientos">
+					<option>{{es.EstablecimientoId}}</option>
 					
 				</select>
 			

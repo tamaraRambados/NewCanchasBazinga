@@ -14,24 +14,23 @@ import javax.ws.rs.core.Response;
 
 import java.util.List;
 @Path("canchas")
-public class CanchaRESTService implements ICancha{
+public class CanchaRESTService {
 	
 	@Inject
     ICancha iCanchas;
 
-    @Override
+
     public Response eliminar(Cancha cancha) {
         return null;
     }
 
-    @Override
+
     public Response acutalizar(Cancha cancha) {
         return null;
     }
 
     @POST
   	@Path("registrar")
-    @Override
     public Response registrar(Cancha cancha) {
         return iCanchas.registrar(cancha);
     }
@@ -39,7 +38,6 @@ public class CanchaRESTService implements ICancha{
     @GET
 	@Path("lista")
 	@Produces(MediaType.APPLICATION_JSON)
-    @Override
     public List<Cancha> getAllCancha() {       
     	return iCanchas.getAllCancha();
     }

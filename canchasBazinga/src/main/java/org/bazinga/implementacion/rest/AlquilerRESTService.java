@@ -7,20 +7,20 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 
-public class AlquilerRESTService implements IAlquiler {
+public class AlquilerRESTService {
 
 
-    @Override
+
     public Response registar(Alquiler alquiler) {
         return null;
     }
 
-    @Override
+
     public List<Alquiler> getAllAlquileres() {
         return null;
     }
 
-    @Override
+   
     public Response actualizar(Alquiler alquiler) {
         return null;
     }
