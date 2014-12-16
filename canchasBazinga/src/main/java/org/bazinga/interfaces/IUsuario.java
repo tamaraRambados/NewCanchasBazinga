@@ -4,14 +4,16 @@ import java.util.List;
 
 import javax.ws.rs.core.Response;
 
+import org.bazinga.entities.MensajeEstado;
 import org.bazinga.entities.Usuario;
 
 public interface IUsuario {
 	
+	public MensajeEstado validar(Usuario usuario);
 	public List<Usuario> getAllUsuario();
-    public Response registrar(Usuario usuario);
-    public Response eliminar(Usuario usuario);
-    public Response modificar(Usuario usuario);
+    public Object registrar(Usuario usuario);
+    public Object eliminar(Usuario usuario);
+    public Object actualizar(Usuario usuario);
     public boolean loguearse(Usuario usuario);
 
 }
