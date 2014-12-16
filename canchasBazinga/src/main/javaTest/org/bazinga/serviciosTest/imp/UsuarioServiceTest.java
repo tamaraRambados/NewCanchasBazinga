@@ -14,19 +14,36 @@ public class UsuarioServiceTest {
 	
 
 	@Test
-	public void test() {
+	public void registrarTest() {
 		Usuario u = new Usuario();
 		u.setCorreoElectronico("isifc.facu@gmail.com");
 		u.setApellido("aguirre");
 		u.setNombre("facundo");
 		u.setUsuarioId(17422);
 		u.setDni(35038452);
-		//u.("lopez y planes");
 		u.setTelefono(36243);
-		//.setTipoUsuario("cliente");
 		usuarioService= new UsuarioService();
-		
 		assertNull("error",usuarioService.registrar(u));
+	}
+	
+	@Test
+	public void getAllUsuarioTest(){
+		
+	}
+	
+	@Test
+	public void  loguearseTest(){
+		
+	}
+	
+	@Test
+	public void eliminarTest(){
+		
+	}
+	
+	@Test
+	public void modificarTest(){
+		
 	}
 
 }

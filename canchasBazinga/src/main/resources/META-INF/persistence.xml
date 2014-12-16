@@ -29,6 +29,7 @@
         <class>org.bazinga.entities.Establecimiento</class>
         <class>org.bazinga.entities.UsuarioDueño</class>
         <class>org.bazinga.entities.UsuarioRegistrado</class>
+        <class>org.bazinga.entities.EstadoCuenta</class>
 
         <properties>
             <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
