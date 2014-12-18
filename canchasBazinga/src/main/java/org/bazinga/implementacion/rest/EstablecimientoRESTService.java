@@ -1,8 +1,8 @@
 package org.bazinga.implementacion.rest;
 
 import org.bazinga.entities.Establecimiento;
+import org.bazinga.entities.MensajeEstado;
 import org.bazinga.interfaces.IEstablecimiento;
-import org.bazinga.servicios.EstablecimientoService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -11,6 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
 import java.awt.*;
 import java.util.List;
 
@@ -23,8 +24,8 @@ public class EstablecimientoRESTService {
 
     @Path("registrar")
     @POST
-    public Response registrar(Establecimiento establecimiento) {
-        return  (Response)iEstablecimiento.registrar(establecimiento);
+    public MensajeEstado registrar(Establecimiento establecimiento) {
+        return  iEstablecimiento.registrar(establecimiento);
     }
 
     @Path("lista")

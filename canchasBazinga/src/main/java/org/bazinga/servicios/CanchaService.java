@@ -1,4 +1,4 @@
-package org.bazinga.servicios;
+/*package org.bazinga.servicios;
 
 
 import org.bazinga.entities.Cancha;
@@ -7,6 +7,7 @@ import org.bazinga.entities.Cancha;
 
 
 import org.bazinga.entities.Establecimiento;
+import org.bazinga.entities.MensajeEstado;
 import org.bazinga.interfaces.ICancha;
 
 import javax.ejb.Stateless;
@@ -29,27 +30,33 @@ public class CanchaService implements ICancha{
 
     @Context
     private UriInfo uriInfo;
+    
+    MensajeEstado mensaje;
 
     public List<Cancha> getAllCancha(){
         TypedQuery<Cancha> query = entityManager.createNamedQuery(Cancha.FIND_ALL,Cancha.class);
         return query.getResultList();
     }
+    //URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(cancha.getIdCancha())).build();
+    //return Response.created(bookUri).build();
     
     @Override
-    public Response registrar(Cancha cancha){
+    public MensajeEstado registrar(Cancha cancha){
         entityManager.persist(cancha);
-        URI bookUri = uriInfo.getAbsolutePathBuilder().path(Long.toString(cancha.getIdCancha())).build();
-        return Response.created(bookUri).build();
+        mensaje= new MensajeEstado();
+        mensaje.setEstado(true);
+        mensaje.setMensaje("se registro correctamente");
+        return mensaje;
     }
 
 	@Override
-	public Response eliminar(Cancha cancha) {
+	public MensajeEstado eliminar(Cancha cancha) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object actualizar(Cancha cancha) {
+	public MensajeEstado actualizar(Cancha cancha) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -79,3 +86,4 @@ public class CanchaService implements ICancha{
 
 
 }
+*/

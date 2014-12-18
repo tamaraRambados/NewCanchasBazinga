@@ -1,4 +1,4 @@
-package org.bazinga.servicios;
+/*package org.bazinga.servicios;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+import org.bazinga.entities.MensajeEstado;
 import org.bazinga.entities.Usuario;
 import org.bazinga.interfaces.IUsuario;
 
@@ -24,11 +25,16 @@ public class UsuarioService implements IUsuario{
 	
 	@Context
 	private UriInfo uriInfo;
+	MensajeEstado mensaje;
 	
-	public Response registrar(Usuario usuario){	
+	public MensajeEstado registrar(Usuario usuario){	
 		entityManager.persist(usuario);
-		URI usuarioURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getUsuarioId())).build();
-	    return Response.created(usuarioURI).build();
+		//URI usuarioURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(usuario.getUsuarioId())).build();
+	    //return Response.created(usuarioURI).build();
+	    mensaje= new MensajeEstado();
+        mensaje.setEstado(true);
+        mensaje.setMensaje("se registro correctamente");
+        return mensaje;
 	}
 
 
@@ -49,20 +55,17 @@ public class UsuarioService implements IUsuario{
 
 
 	@Override
-	public Response eliminar(Usuario usuario) {
+	public MensajeEstado eliminar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-	
 
 	@Override
-	public Object actualizar(Usuario usuario) {
+	public MensajeEstado actualizar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	
 	
-}
+}*/

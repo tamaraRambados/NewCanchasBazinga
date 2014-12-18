@@ -1,7 +1,8 @@
-package org.bazinga.servicios;
+/*package org.bazinga.servicios;
 
 import org.bazinga.entities.Cancha;
 import org.bazinga.entities.Establecimiento;
+import org.bazinga.entities.MensajeEstado;
 import org.bazinga.entities.Usuario;
 import org.bazinga.interfaces.IEstablecimiento;
 
@@ -25,11 +26,17 @@ public class EstablecimientoService implements IEstablecimiento{
 
     @Context
     private UriInfo uriInfo;
-
-    public Response registrar(Establecimiento establecimiento) {
+    
+    MensajeEstado mensaje;
+    //URI establecimientoURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(establecimiento.getEstablecimientoId())).build();
+    //return Response.created(establecimientoURI).build();
+    @Override
+    public MensajeEstado registrar(Establecimiento establecimiento) {
         entityManager.persist(establecimiento);
-        URI establecimientoURI = uriInfo.getAbsolutePathBuilder().path(Long.toString(establecimiento.getEstablecimientoId())).build();
-        return Response.created(establecimientoURI).build();
+        mensaje= new MensajeEstado();
+        mensaje.setEstado(true);
+        mensaje.setMensaje("se registro correctamente");
+        return mensaje;
     }
 
     public List<Establecimiento> getAllEstablecimientos(){
@@ -38,13 +45,13 @@ public class EstablecimientoService implements IEstablecimiento{
     }
 
 	@Override
-	public Object actualizar(Establecimiento establecimiento) {
+	public MensajeEstado actualizar(Establecimiento establecimiento) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object eliminar(Establecimiento establecimiento) {
+	public MensajeEstado eliminar(Establecimiento establecimiento) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -62,4 +69,4 @@ public class EstablecimientoService implements IEstablecimiento{
 	}
 
 
-}
+}*/

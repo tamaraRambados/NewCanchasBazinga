@@ -10,7 +10,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.bazinga.servicios.UsuarioService;
+
+import org.bazinga.entities.MensajeEstado;
 import org.bazinga.entities.Usuario;
 import org.bazinga.interfaces.IUsuario;
 
@@ -37,20 +38,9 @@ public class UsuarioRESTService{
 
     @POST
     @Path("registrar")
-    public Response guardar(Usuario u){
-    	return (Response)iUsuario.registrar(u);
+    public MensajeEstado registrar(Usuario u){
+    	return iUsuario.registrar(u);
     }
-
-
-
-
-	public Response registrar(Usuario usuario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
 
 	public Response eliminar(Usuario usuario) {
 		// TODO Auto-generated method stub

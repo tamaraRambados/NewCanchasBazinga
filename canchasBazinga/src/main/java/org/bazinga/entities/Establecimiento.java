@@ -18,18 +18,18 @@ public class Establecimiento {
     
     //relaciones
     
-   /* @OneToMany(fetch=FetchType.LAZY)
-    * 
-    private List<Cancha> listacanchas;*/
+   @OneToMany(fetch=FetchType.LAZY)
+    private List<Cancha> listacanchas;
   
    
     private String direccion;
-   /* @ManyToMany
-    private List<UsuarioDueño> usuarioDueños;*/
+   @ManyToMany
+    private List<Usuario> usuarioDueños;
     
     
     @NotNull
     private String nombre;
+    @NotNull
     private Integer telefono;
    
 
@@ -46,25 +46,25 @@ public class Establecimiento {
 
     
 
-//    public List<Cancha> getListacanchas() {
-//        return listacanchas;
-//    }
+    public List<Cancha> getListacanchas() {
+        return listacanchas;
+    }
 
-   /* public void setListacanchas(List<Cancha> listacanchas) {
+    public void setListacanchas(List<Cancha> listacanchas) {
         this.listacanchas = listacanchas;
-    }*/
+    }
     
     public String getNombre() {
         return nombre;
-    }/*
+    }
 
-    public List<UsuarioDueño> getUsuarioDueños() {
+    public List<Usuario> getUsuarioDueños() {
         return usuarioDueños;
     }
 
-    public void setUsuarioDueños(List<UsuarioDueño> usuarioDueños) {
-        this.usuarioDueños = usuarioDueños;
-    }*/
+    public void setUsuarioDueños(List<Usuario> list) {
+        this.usuarioDueños = list;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

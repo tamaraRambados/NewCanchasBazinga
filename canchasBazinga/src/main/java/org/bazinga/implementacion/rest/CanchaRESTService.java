@@ -1,8 +1,8 @@
 package org.bazinga.implementacion.rest;
 
 import org.bazinga.entities.Cancha;
+import org.bazinga.entities.MensajeEstado;
 import org.bazinga.interfaces.ICancha;
-
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -18,6 +18,9 @@ public class CanchaRESTService {
 	
 	@Inject
     ICancha iCanchas;
+	
+	
+	
 
     public Response eliminar(Cancha cancha) {
         return null;
@@ -29,8 +32,8 @@ public class CanchaRESTService {
 
     @POST
   	@Path("registrar")
-    public Response registrar(Cancha cancha) {
-        return (Response)iCanchas.registrar(cancha);
+    public MensajeEstado registrar(Cancha cancha) {
+        return iCanchas.registrar(cancha);
     }
 
     @GET
